@@ -1,0 +1,16 @@
+td>img{
+    transition: .1s;
+}
+td>img:hover{
+    transform: scale(1.1);
+    border: blue 2px double;
+}
+body{
+    margin-left: 25px;
+    text-align: center;
+    background-color: rgba(231, 212, 100, 0.966);
+}
+table{
+    margin: auto;
+    margin-bottom: 100px;
+}
