@@ -12,10 +12,17 @@
 <?php
 function archivos($directorio){
 $dirint = dir($directorio);
+$array=[];
     while (($archivo = $dirint->read()) !== false){
-        if (eregi("jpg", $archivo)){
-        echo "<img width='255' height='350' src='".$directorio."/".$archivo."' >"."\n";
-    }}
+        if (stristr($archivo,"jpg")){
+			 array_push($array,$archivo);
+    }	
+	}
+	sort($array,SORT_NATURAL);
+	$page=0;
+	for($page;$page<count($array);$page++){
+        echo "<img width='855' height='1050' src='".$directorio."/".$array[$page]."' >"."<br>";}
+	
     $dirint->close();
 }
 archivos("Elements/mang/hero")
