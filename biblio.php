@@ -7,7 +7,17 @@
         <h2>Mangas disponibles</h2>
         <table>
             <tr>
-                
+            <?php
+$dirint = dir("Elements/mang/");
+$n=0;
+    while (($archivo = $dirint->read()) !== false){
+        if ($archivo!="."&&$archivo!=".."){
+            echo "<td><img width=\"155\" height=\"250\" src=\"./Elements/mang/".$archivo."/Image-1.jpg \" onclick=\"abrirdirectorio($n);\"></img></td>";
+            $n++;
+        }
+
+	}
+?>
             </tr>
         </table>
     </body>
@@ -15,12 +25,3 @@
         <p><button name="atras">anterior</button> <button name="sig">siguiente</button></p>
     </footer>
 </html>
-<?php
-$dirint = dir("Elements/mang/");
-    while (($archivo = $dirint->read()) !== false){
-        if (is_dir($archivo)){
-            echo $archivo;
-            echo "<td><img width=\"155\" height=\"250\" src=\"Elements/mang/".$archivo."Image-1.jpg\" onclick=\"abrirdirectorio();\"></img></td>";
-    }	
-	}
-?>

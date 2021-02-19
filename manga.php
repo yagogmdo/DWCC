@@ -4,26 +4,27 @@
         <link rel="stylesheet" href="biblio.css">
     </head>
     <body>
-        <img  src="" alt="">
-    </body>
-    <footer>
-    </footer>
-</html>
-<?php
+    <?php
 function archivos($directorio){
 $dirint = dir($directorio);
 $array=[];
     while (($archivo = $dirint->read()) !== false){
-        if (stristr($archivo,"jpg")){
+        if (stristr($archivo,"jpg")||stristr($archivo,"png")){
 			 array_push($array,$archivo);
     }	
 	}
 	sort($array,SORT_NATURAL);
 	$page=0;
+    echo "<img width='655' height='850' src='".$directorio."/Image-1.jpg'><br>";
 	for($page;$page<count($array);$page++){
-        echo "<img width='855' height='1050' src='".$directorio."/".$array[$page]."' >"."<br>";}
-	
+        if($array[$page]!="Image-1.jpg"){
+        echo "<img width='655' height='850' src='".$directorio."/".$array[$page]."' >"."<br>";}
+    }
     $dirint->close();
 }
-archivos("Elements/mang/hero")
+archivos($_REQUEST['nombre']);
 ?>
+    </body>
+    <footer>
+    </footer>
+</html>
