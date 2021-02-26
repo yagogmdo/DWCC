@@ -1,4 +1,3 @@
-
 window.onload=function(){
     addEventListener("keydown", rotaridioma);
     function rotaridioma(evento){

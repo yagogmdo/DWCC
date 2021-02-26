@@ -5,7 +5,9 @@
         <link rel="stylesheet" href="biblio.css">
     </head>
     <body>
+    <button class="btn-flotante">Cambio</button>
     <?php
+    
 function archivos($directorio){
 $dirint = dir($directorio);
 $array=[];
