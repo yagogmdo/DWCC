@@ -1,6 +1,7 @@
 <html>
     <head>
         <script src="biblio.js"></script></script>
+        <script src="lectura.js"></script></script>       
         <link rel="stylesheet" href="biblio.css">
     </head>
     <body>
@@ -18,11 +19,15 @@ $array=[];
     echo "<img width='655' height='850' src='".$directorio."/Image-1.jpg'><br>";
 	for($page;$page<count($array);$page++){
         if($array[$page]!="Image-1.jpg"){
-        echo "<img width='655' height='850' src='".$directorio."/".$array[$page]."' >"."<br>";}
+            echo "<img width='655' height='850' src='".$directorio."/".$array[$page]."' >"."<br>";}
     }
     $dirint->close();
 }
-archivos($_REQUEST['nombre']);
+if($_REQUEST['pos']==1){
+archivos($_REQUEST['nombre']);}
+elseif($_REQUEST['pos']==2){
+    archivos($_REQUEST['trad']);
+}
 ?>
     </body>
     <footer>

@@ -12,7 +12,7 @@ $dirint = dir("Elements/mang/");
 $n=0;
     while (($archivo = $dirint->read()) !== false){
         if ($archivo!="."&&$archivo!=".."){
-            echo "<td><img width=\"155\" height=\"250\" src=\"./Elements/mang/".$archivo."/Image-1.jpg \" onclick=\"abrirdirectorio($n);\"></img></td>";
+            echo "<td><a href=\"\"><img width=\"155\" height=\"250\" src=\"./Elements/mang/".$archivo."/Image-1.jpg \" onclick=\"abrirdirectorio($n);\"></img></a></td>";
             $n++;
         }
 
