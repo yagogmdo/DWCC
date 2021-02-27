@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="biblio.css">
     </head>
     <body>
-    <button class="btn-flotante">Cambio</button>
+    <button id="boton"class="btn-flotante">Cambio</button>
     <?php
     
 function archivos($directorio){
@@ -18,7 +18,9 @@ $array=[];
 	}
 	sort($array,SORT_NATURAL);
 	$page=0;
-    echo "<img width='655' height='850' src='".$directorio."/Image-1.jpg'><br>";
+    if($array[$page]=="Image-1.jpg"){
+    echo "<img width='655' height='850' src='".$directorio."/Image-1.jpg'><br>";}
+
 	for($page;$page<count($array);$page++){
         if($array[$page]!="Image-1.jpg"){
             echo "<img width='655' height='850' src='".$directorio."/".$array[$page]."' >"."<br>";}
