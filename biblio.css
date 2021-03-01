@@ -3,7 +3,7 @@ td>a>img{
 }
 td>a>img:hover{
     transform: scale(1.1);
-    border: black 2px double;
+    border: red 2px double;
 }
 body{
     margin-left: 25px;
