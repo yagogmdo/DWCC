@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="biblio.css">
     </head>
     <body>
-        <h2>Mangas disponibles</h2>
+        <h2>Mangas recientes</h2>
         <table>
             <tr>
             <?php

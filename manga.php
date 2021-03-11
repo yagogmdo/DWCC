@@ -6,6 +6,7 @@
     </head>
     <body>
     <button id="boton"class="btn-flotante">Cambio</button>
+    <button id="boton2"class="btn-flotante2">Mostrar ambos</button>
     <?php
     
 function archivos($directorio){
@@ -27,10 +28,30 @@ $array=[];
     }
     $dirint->close();
 }
+
 if($_REQUEST['pos']==1){
 archivos($_REQUEST['nombre']);}
 elseif($_REQUEST['pos']==2){
     archivos($_REQUEST['trad']);
+}
+elseif($_REQUEST['pos']==3){
+    ?>
+<table>
+        <tr>
+            <th>Original</th>
+            <th>Traducción</th>
+        </tr>
+<tr>
+    <td><?php
+    archivos($_REQUEST['nombre']);?>
+    </td>
+    <td><?php archivos($_REQUEST['trad']);?></td>
+</tr>
+
+</table>
+
+
+<?php
 }
 ?>
     </body>

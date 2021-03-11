@@ -5,8 +5,10 @@ window.onload=function(){
 
 
     var click=document.getElementById("boton");
+    var click2=document.getElementById("boton2");
     addEventListener("keydown", rotaridioma);
-    click.addEventListener("click",cambio)
+    click.addEventListener("click",cambio);
+    click2.addEventListener("click",mostrardos);
     function rotaridioma(evento){
         tecla=evento.keyCode;
         if(tecla=="17"){
@@ -40,6 +42,13 @@ window.onload=function(){
             localizacionf=localizacion.slice(0,localizacion.lastIndexOf("&"))+"&pos="+posicion;
             window.open(localizacionf,'_self')
         }
+        }
+        function mostrardos(){
+            posicion=3;
+            localStorage.setItem("posicion", posicion);
+            var localizacion=window.location.href;
+            localizacionf=localizacion.slice(0,localizacion.lastIndexOf("&"))+"&pos="+posicion;
+            window.open(localizacionf,'_self');
         }
     }
     
