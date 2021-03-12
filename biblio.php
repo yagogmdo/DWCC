@@ -10,14 +10,15 @@
             <tr>
             <?php
 $dirint = dir("Elements/mang/");
-$n=0;
+$query ="SELECT * FROM mangas";
+$result = $db->query($query);
+mysqli_num_rows($result);   
     while (($archivo = $dirint->read()) !== false){
         if ($archivo!="."&&$archivo!=".."){
-            echo "<td><a href=\"\"><img width=\"155\" height=\"250\" src=\"./Elements/mang/".$archivo."/Image-1.jpg \" onclick=\"abrirdirectorio($n);\"></img></a></td>";
-            $n++;
+            if($row = $result->fetch_assoc()) {
+            echo "<td><a href=\"\"><img width=\"155\" height=\"250\" src=\"./Elements/mang/".$archivo."/Image-1.jpg \" onclick=\"abrirdirectorio(". $row['id'] .");\"></img></a></td>";
         }
-
-	}
+	}}
 ?>
             </tr>
         </table>

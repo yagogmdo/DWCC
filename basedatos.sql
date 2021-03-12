@@ -10,7 +10,7 @@ CREATE TABLE `mangas` (
 
 
 INSERT INTO `mangas` (`id`, `nombre`,`numero`, `descripcion`,`link`) VALUES
-(1, 'Boku no hero',1, 'Aprende como crear una aplicación web completa con PHP.','./Elements/mang/hero/Image-1.jpg');
+(0, 'Boku no hero',1, 'Aprende como crear una aplicación web completa con PHP.','./Elements/mang/hero/Image-1.jpg');
 
 ALTER TABLE `mangas`
   ADD PRIMARY KEY (`id`);
