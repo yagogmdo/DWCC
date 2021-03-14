@@ -13,7 +13,7 @@
   <div class="main-menu-content">
     <!-- main logo -->
     <div class="main-menu-logo">
-      <h2>Menu</h2>
+      <h2>Everything will be okay in the end</h2>
     </div>
     <!-- navigation -->
     <ul class="main-menu-nav">
@@ -39,32 +39,10 @@
 
 <div class="main-wrapper">
   <div class="main-content">
-    <h4>INICIO</h4>
+    <h4>Main content</h4>
     <div class="posts">
        <ul>
-         <li> <h2>Mangas recientes</h2>
-        <table>
-            <tr>
-            <?php
-$query ="SELECT * FROM mangas ORDER BY fecha ASC LIMIT 5";
-$result = $db->query($query);
-mysqli_num_rows($result);   
-            while($row = $result->fetch_assoc()) {
-            echo "<td><a href=\"\"><img width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"abrirdirectorio(". $row['id'] .");\"></img></a></td>";
-        }
-?>
-            </tr>
-        </table></li>
-         <li></li>
-         <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat accusamus, iusto, maxime adipisci vitae voluptas unde rerum, reiciendis ratione eum harum, natus quia eveniet vel ab dolore veritatis. Est illo officia eos sed, dignissimos, quod exercitationem ipsum mollitia nulla beatae quo praesentium distinctio. Ipsa magnam cupiditate quia ducimus dicta excepturi.</p></li>
-       </ul>
-    </div>
-  </div> 
-</div>
-       
-      
-      
-      
+         <li>       
       <?php
        
       if(!empty($_POST))
@@ -97,7 +75,13 @@ mysqli_num_rows($result);
               
           }
       }
-        ?>
+        ?></li>
+         <li></li>
+         <li></li>
+       </ul>
+    </div>
+  </div> 
+</div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./menu.js"></script>
     </body>
     <footer>
