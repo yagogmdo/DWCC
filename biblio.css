@@ -25,12 +25,14 @@ html {
   a {
 	text-decoration: none;
   }
-  
+  .posts>*{
+    text-align: center;
+  }
 
-td>a>img{
+td>.lista>img{
     transition: .1s;
 }
-td>a>img:hover{
+td>.lista>img:hover{
     transform: scale(1.1);
     border: blue 2px double;
 }
@@ -374,3 +376,56 @@ input[type="search"]:focus{
 }
 
 
+
+
+/*MENU TRADUCIR*/
+
+#sel{
+  width:530px;
+  height: 270px;
+  margin-left: 100px;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#222;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:24px;
+	resize:none;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+
+
+
+/*ANTES*/
+
+.imgmanga{
+  width: 750px;
+  height: 950px;
+  margin-bottom: 1px;
+}
+/*DESPUES*/
+
+.ambos {
+  border-spacing: 20px 0px ;
+  border-collapse: separate;
+ }
+.orig,.traduc{
+width: 50%;
+
+}
+
+
+.orig>a>*{
+  width: 100%;
+}
+.traduc>a>*{
+  width: 100%;
+  
+}

@@ -3,7 +3,6 @@ window.onload=function(){
     window.scrollTo(0,pos);
 
 
-
     var click=document.getElementById("boton");
     var click2=document.getElementById("boton2");
     addEventListener("keydown", rotaridioma);
@@ -37,7 +36,7 @@ window.onload=function(){
             }
             else{
             posicion=2;
-            localStorage.setItem("posicion", posicion);
+            localStorage.setItem("posicion", posicion);        
             var localizacion=window.location.href;
             localizacionf=localizacion.slice(0,localizacion.lastIndexOf("&"))+"&pos="+posicion;
             window.open(localizacionf,'_self')

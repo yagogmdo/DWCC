@@ -1,6 +1,7 @@
 <?php include 'conexion.php';?>
 <html>
     <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./menu.js"></script>
         <script src="biblio.js"></script></script>
         <script src="menu.js"></script></script>
         <link rel="stylesheet" href="biblio.css">
@@ -50,13 +51,25 @@ $query ="SELECT * FROM mangas ORDER BY fecha ASC LIMIT 5";
 $result = $db->query($query);
 mysqli_num_rows($result);   
             while($row = $result->fetch_assoc()) {
-            echo "<td><a href=\"\"><img width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"abrirdirectorio(". $row['id'] .");\"></img></a></td>";
+            echo "<td><a class=\"lista\" href=\"\"><img width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return abrirdirectorio(". $row['id'] .");\"></img></a></td>";
+        }
+?>
+            </tr>
+        </table></li>
+         <li><h2>Novelas recientes</h2>
+        <table>
+            <tr>
+            <?php
+$query ="SELECT * FROM novelas ORDER BY fecha ASC LIMIT 5";
+$result = $db->query($query);
+mysqli_num_rows($result);   
+            while($row = $result->fetch_assoc()) {
+            echo "<td><a class=\"lista\"href=\"\"><img  name='novela' width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return abrirdirectorio2(". $row['id'] .");\"></img></a></td>";
         }
 ?>
             </tr>
         </table></li>
          <li></li>
-         <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat accusamus, iusto, maxime adipisci vitae voluptas unde rerum, reiciendis ratione eum harum, natus quia eveniet vel ab dolore veritatis. Est illo officia eos sed, dignissimos, quod exercitationem ipsum mollitia nulla beatae quo praesentium distinctio. Ipsa magnam cupiditate quia ducimus dicta excepturi.</p></li>
        </ul>
     </div>
   </div> 
@@ -98,7 +111,6 @@ mysqli_num_rows($result);
           }
       }
         ?>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./menu.js"></script>
     </body>
     <footer>
        
