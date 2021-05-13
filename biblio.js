@@ -1,5 +1,8 @@
-var ventana;
-var posicion=1;
+function mostrardescripcion(id){
+    
+
+}
+
 function abrirdirectorio(numero){
     var arraymanga=[];
     for(i=0;i<document.getElementsByTagName("img").length;i++){
@@ -22,3 +25,14 @@ function abrirdirectorio2(numero){
    location.href="lecturalibro.php?nombre="+dirmanga+"";
    return false;
 }
+
+
+
+
+
+
+
+
+
+var ventana;
+var posicion=1;
