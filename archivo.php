@@ -3,7 +3,7 @@ if(isset($_POST["sel"]))
 {
 	if($_POST["sel"]){
     $mivariable_para_consultar =$_POST["sel"];
-    $language_from = 'ja';
+    $language_from = 'auto';
     $language_to='es';
     
     $text_to_translate = $mivariable_para_consultar;

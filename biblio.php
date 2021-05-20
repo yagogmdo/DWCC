@@ -26,32 +26,42 @@
           </div>
         </div>
       </form>
-      <li><a href="biblio.php" class="orange"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a></li>
-      <li><a href="#" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Library</a></li>
-      <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>&nbsp; Forum</a></li>
-      <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; Contact</a></li>
-      <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>&nbsp; About</a></li>
+      <li><a href="biblio.php" class="orange"><i class="fa fa-home fa-fw"></i>&nbsp; Inicio</a></li>
+      <li><a href="listabibl.php" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Librería</a></li>
+      <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>&nbsp; Foro</a></li>
+      <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; Contacto</a></li>
+      <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>&nbsp; Acerca de</a></li>
     </ul>
 
-    <a href="#" class="main-menu-close"><i class="fa fa-close"></i>&nbsp; Close menu</a>
+    <a href="#" class="main-menu-close"><i class="fa fa-close"></i>&nbsp; Cerrar menú</a>
   </div>
 </div>
 
 
 <div class="main-wrapper">
   <div class="main-content">
-    <h4>INICIO</h4>
+  <div class="container2">
+    <div class="center">
+      <button class="btn2" onclick="window.location='biblio.php'">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span><h4><a href="biblio.php"><i class="fa fa-home fa-fw"></i>INICIO</a></h4></span>
+      </button>
+    </div>
+  </div>
     <div class="posts">
        <ul>
          <li> <h2>Mangas recientes</h2>
         <table>
             <tr>
             <?php
-$query ="SELECT * FROM mangas ORDER BY fecha ASC LIMIT 5";
+$query ="SELECT * FROM mangas ORDER BY fecha DESC LIMIT 5";
 $result = $db->query($query);
 mysqli_num_rows($result);   
             while($row = $result->fetch_assoc()) {
-            echo "<td><a class=\"lista\" href=\"\"><img width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return abrirdirectorio(". $row['id'] .");\"></img></a></td>";
+            echo "<td><a class=\"lista\" href=\"\"><img id=\"".$row['idmanga']."\" width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return mostrardescripcion(". $row['idmanga'] .");\"></img></a></td>";
         }
 ?>
             </tr>
@@ -60,11 +70,11 @@ mysqli_num_rows($result);
         <table>
             <tr>
             <?php
-$query ="SELECT * FROM novelas ORDER BY fecha ASC LIMIT 5";
+$query ="SELECT * FROM novelas ORDER BY fecha DESC LIMIT 5";
 $result = $db->query($query);
 mysqli_num_rows($result);   
             while($row = $result->fetch_assoc()) {
-            echo "<td><a class=\"lista\"href=\"\"><img  name='novela' width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return abrirdirectorio2(". $row['id'] .");\"></img></a></td>";
+            echo "<td><a class=\"lista\"href=\"\"><img  id=\"".$row['idnov']."\" width=\"155\" height=\"250\" src=\"" .$row['link'] ."\" onclick=\"return mostrardescripcion(". $row['idnov'] .");\"></img></a></td>";
         }
 ?>
             </tr>

@@ -5,10 +5,10 @@ window.onload=function(){
 
     var click=document.getElementById("boton");
     var click2=document.getElementById("boton2");
-    addEventListener("keydown", rotaridioma);
+    /*addEventListener("keydown", rotaridioma);*/
     click.addEventListener("click",cambio);
     click2.addEventListener("click",mostrardos);
-    function rotaridioma(evento){
+   /* function rotaridioma(evento){
         tecla=evento.keyCode;
         if(tecla=="17"){
                 posicion=1;
@@ -24,7 +24,7 @@ window.onload=function(){
                 window.open(localizacionf,'_self')
                 
             }
-        }
+        }*/
         function cambio(){
             if(localStorage.getItem("posicion")==2){
                 posicion=1;
